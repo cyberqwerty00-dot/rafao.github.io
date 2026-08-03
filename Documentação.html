@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação | Programas Essenciais | Privacidade | Open Source</title>
+</head>
+
+<body>
+  <header>
+    <h1>Documentação</h1>
+    <div class="card">
+      <p>Guias práticos, referência técnica e respostas para as dúvidas mais comuns.</p>
+    </div>
+  </header>
+
+  <button class="switch" id="themeSwitch" data-checked="false" aria-label="Alternar modo escuro">
+    <span class="switch-thumb" id="switchThumb">☀️</span>
+  </button>
+
+  <nav>
+    <a href="index.html">Conteúdo Principal</a>
+    <a href="documentacao.html">Documentação</a>
+    <a href="tutoriais.html" >Tutoriais</a>
+    <a href="comunidade.html">Comunidade</a>
+    <a href="downloads.html" >Downloads</a>
+  </nav>
+
+  <main>
+
+    <h2>Guias práticos</h2>
+
+    <h3>Instalação dos programas recomendados</h3>
+    <p>Passo a passo básico para instalar as principais alternativas open-source citadas no conteúdo principal do site.</p>
+    <ul>
+      <li><strong>Firefox</strong> — baixe direto do site oficial (mozilla.org/firefox) ou pela loja de aplicativos do seu sistema operacional. Em distribuições Linux, geralmente já vem pré-instalado.</li>
+      <li><strong>VLC Media Player</strong> — disponível em videolan.org, com instaladores para Windows, macOS e Linux. Em distros baseadas em Debian, pode ser instalado via <code>apt install vlc</code>.</li>
+      <li><strong>LibreOffice</strong> — baixe em libreoffice.org. O instalador já inclui todos os módulos (Writer, Calc, Impress).</li>
+      <li><strong>F-Droid</strong> — baixe o APK direto em f-droid.org (não está disponível na Google Play Store, por princípio). É necessário permitir instalação de fontes desconhecidas no Android.</li>
+    </ul>
+
+    <h3>Como verificar a integridade de um download</h3>
+    <p>Verificar se o arquivo baixado é exatamente o que o projeto publicou (e não foi alterado no meio do caminho) é uma prática recomendada, especialmente em downloads fora de lojas oficiais.</p>
+    <ul>
+      <li><strong>Checksum SHA-256</strong> — o site do projeto geralmente publica um hash SHA-256 do arquivo. Depois de baixar, gere o hash do arquivo localmente e compare:
+        <br>Linux/macOS: <code>sha256sum arquivo.AppImage</code>
+        <br>Windows (PowerShell): <code>Get-FileHash arquivo.exe -Algorithm SHA256</code>
+        <br>Se os dois valores não forem idênticos, não instale o arquivo.
+      </li>
+      <li><strong>Assinatura GPG</strong> — alguns projetos assinam os arquivos com uma chave GPG. Isso confirma não só que o arquivo não foi alterado, mas que veio realmente do mantenedor do projeto. Requer importar a chave pública do projeto e rodar <code>gpg --verify</code> sobre o arquivo de assinatura.</li>
+    </ul>
+
+    <h3>Guia de migração</h3>
+    <p>Trocar de software proprietário para open-source costuma ser mais simples do que parece — a maioria das alternativas foi desenhada para ser familiar a quem vem de outra ferramenta.</p>
+    <ul>
+      <li><strong>Chrome → Firefox:</strong> o Firefox importa favoritos, senhas e histórico automaticamente na primeira execução.</li>
+      <li><strong>Microsoft Office → LibreOffice:</strong> abre e salva arquivos .docx, .xlsx e .pptx nativamente, então não é necessário converter os arquivos existentes.</li>
+      <li><strong>WhatsApp → Signal:</strong> é possível importar o histórico de conversas do WhatsApp durante a configuração inicial do Signal, tanto no Android quanto no iOS.</li>
+      <li><strong>Photoshop → GIMP:</strong> a curva de aprendizado é a maior desse grupo — os atalhos e o fluxo de camadas são diferentes, vale procurar um guia de conversão de atalhos.</li>
+    </ul>
+
+    <h2>Referência técnica</h2>
+
+    <h3>Glossário</h3>
+    <ul>
+      <li><strong>Código aberto (open-source):</strong> software cujo código-fonte é público e pode ser lido, modificado e redistribuído por qualquer pessoa.</li>
+      <li><strong>Telemetria:</strong> dados de uso enviados automaticamente por um programa para os servidores de quem o desenvolveu.</li>
+      <li><strong>Backdoor:</strong> uma porta de acesso oculta em um software, que permite que alguém entre no sistema sem passar pelas verificações normais.</li>
+      <li><strong>Fork:</strong> uma cópia independente de um projeto open-source, criada por outra pessoa ou comunidade a partir do código original.</li>
+      <li><strong>Auditoria de código:</strong> processo de revisar o código-fonte de um programa em busca de falhas de segurança ou comportamentos indevidos.</li>
+      <li><strong>Zero-trust:</strong> princípio de segurança que parte do pressuposto de que nada deve ser confiado por padrão — tudo precisa ser verificado.</li>
+      <li><strong>Upstream:</strong> o repositório ou projeto original do qual uma cópia, fork ou pacote foi derivado.</li>
+      <li><strong>Licença livre:</strong> licença legal que garante ao usuário o direito de usar, estudar, modificar e redistribuir um software (ex: GPL, MIT, Apache).</li>
+    </ul>
+
+    <h3>Tabela comparativa</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Proprietário</th>
+          <th>Alternativa open-source</th>
+          <th>Categoria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Chrome</td>
+          <td>Firefox</td>
+          <td>Navegador</td>
+        </tr>
+        <tr>
+          <td>Microsoft Office</td>
+          <td>LibreOffice</td>
+          <td>Suíte de escritório</td>
+        </tr>
+        <tr>
+          <td>Adobe Photoshop</td>
+          <td>GIMP</td>
+          <td>Edição de imagem</td>
+        </tr>
+        <tr>
+          <td>WhatsApp</td>
+          <td>Signal</td>
+          <td>Mensagens</td>
+        </tr>
+        <tr>
+          <td>Windows Media Player</td>
+          <td>VLC</td>
+          <td>Player de mídia</td>
+        </tr>
+        <tr>
+          <td>Google Play Store</td>
+          <td>F-Droid</td>
+          <td>Loja de aplicativos (Android)</td>
+        </tr>
+        <tr>
+          <td>Dropbox</td>
+          <td>Nextcloud</td>
+          <td>Armazenamento em nuvem</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h2>Perguntas frequentes</h2>
+
+    <h4>Open-source é sempre mais seguro?</h4>
+    <p>Não automaticamente. O código estar aberto só melhora a segurança se alguém de fato o revisar. Projetos grandes e ativos (como Firefox ou LibreOffice) têm muitos olhos auditando o código constantemente. Projetos pequenos ou abandonados podem ter falhas que nunca foram encontradas, mesmo com o código público.</p>
+
+    <h4>Como sei que o programa que eu instalei bate com o código publicado?</h4>
+    <p>Na prática, é difícil confirmar isso sozinho sem conhecimento técnico avançado. O que dá pra fazer é: baixar sempre do site oficial ou de repositórios confiáveis (nunca de sites de terceiros), conferir o checksum quando disponível, e confiar no processo de build reprodutível que alguns projetos oferecem — quando o código-fonte, compilado por qualquer pessoa, sempre resulta no mesmo arquivo binário.</p>
+
+    <h4>Open-source custa dinheiro?</h4>
+    <p>Na grande maioria dos casos, não — o software em si é gratuito. Alguns projetos oferecem versões pagas com suporte técnico, hospedagem gerenciada ou recursos extras (é o chamado modelo "open-core"), mas a base do software continua livre e gratuita.</p>
+
+    <h2>Para quem quer ir além</h2>
+
+    <h3>Como contribuir com um projeto open-source</h3>
+    <p>Contribuir não exige saber programar. Formas comuns de ajudar um projeto:</p>
+    <ul>
+      <li><strong>Reportar bugs:</strong> a maioria dos projetos usa GitHub ou GitLab, com uma seção de "Issues" para relatar problemas encontrados.</li>
+      <li><strong>Traduzir:</strong> muitos projetos usam plataformas como Weblate ou Crowdin, onde qualquer pessoa pode sugerir traduções.</li>
+      <li><strong>Revisar código:</strong> para quem programa, revisar "pull requests" de outras pessoas é uma forma valiosa de contribuição, mesmo sem escrever código novo.</li>
+      <li><strong>Documentar:</strong> escrever ou corrigir a documentação de um projeto costuma ser bem-vindo e não exige conhecimento profundo do código.</li>
+    </ul>
+
+    <h3>Como avaliar a reputação de um projeto</h3>
+    <p>Antes de confiar em um software open-source pouco conhecido, alguns sinais ajudam a diferenciar um projeto sério de um abandonado ou suspeito:</p>
+    <ul>
+      <li>Data do último commit — projetos sem atividade há anos podem ter vulnerabilidades não corrigidas.</li>
+      <li>Número de colaboradores — projetos mantidos por uma única pessoa são mais frágeis e mais fáceis de comprometer.</li>
+      <li>Histórico de issues respondidas — indica se a comunidade ou mantenedores realmente acompanham o projeto.</li>
+      <li>Licença clara e visível no repositório — a ausência de licença é um sinal de alerta.</li>
+      <li>Presença em repositórios curados, como o F-Droid, que tem critérios próprios de inclusão.</li>
+    </ul>
+
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const switchBtn = document.getElementById('themeSwitch');
+    const thumb = document.getElementById('switchThumb');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+        switchBtn.setAttribute('data-checked', 'true');
+        thumb.textContent = '🌙';
+      } else {
+        root.removeAttribute('data-theme');
+        switchBtn.setAttribute('data-checked', 'false');
+        thumb.textContent = '☀️';
+      }
+    }
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = saved || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
+
+    switchBtn.addEventListener('click', () => {
+      const isDark = switchBtn.getAttribute('data-checked') === 'true';
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+
+</body>
+
+</html>
