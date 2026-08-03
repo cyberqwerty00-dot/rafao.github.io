@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="css/Comunidade.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidade</title>
+</head>
+
+<body>
+  <header>
+    <h1>Comunidade</h1>
+    <div class="card">
+      <p>Clique no botão para alternar entre modo claro e escuro. A preferência fica salva.</p>
+    </div>
+  </header>
+  <button class="switch" id="themeSwitch" data-checked="false" aria-label="Alternar modo escuro">
+    <span class="switch-thumb" id="switchThumb">☀️</span>
+  </button>
+
+  </header>
+  <nav>
+    <a href="index.html" >Conteúdo Principal</a>
+    <a href="Documentação.html">Documentação</a>
+    <a href="Tutoriais.html" >Tutoriais</a>
+    <a href="Comunidade.html">Comunidade</a>
+    <a href="Downloads.html" >Downloads</a>
+  </nav>
+</body>
+
+<script>
+    const root = document.documentElement;
+    const switchBtn = document.getElementById('themeSwitch');
+    const thumb = document.getElementById('switchThumb');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+        switchBtn.setAttribute('data-checked', 'true');
+        thumb.textContent = '🌙';
+      } else {
+        root.removeAttribute('data-theme');
+        switchBtn.setAttribute('data-checked', 'false');
+        thumb.textContent = '☀️';
+      }
+    }
+
+    const saved = localStorage.getItem('theme');
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const initialTheme = saved || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
+
+    switchBtn.addEventListener('click', () => {
+      const isDark = switchBtn.getAttribute('data-checked') === 'true';
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
